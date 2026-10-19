@@ -1,0 +1,51 @@
+# workprasanth9/homebrew-tap
+
+Homebrew tap for macOS tools by [Prasanth Yethirajula](https://github.com/workprasanth9).
+
+## Install
+
+```bash
+brew tap workprasanth9/tap
+brew install --cask nightshiftctl
+```
+
+Or in one line:
+
+```bash
+brew install --cask workprasanth9/tap/nightshiftctl
+```
+
+## Available casks
+
+| Cask | What it installs |
+| --- | --- |
+| `nightshiftctl` | [NightShiftCtl](https://github.com/workprasanth9/NightShiftCtl): menu bar app for Night Shift, Keep Awake, Dark Mode and other everyday toggles, plus the `nightshift` command line tool |
+
+## NightShiftCtl notes
+
+- The app goes to `/Applications/NightShiftCtl.app` and the `nightshift` CLI is
+  linked into Homebrew's `bin`, so `nightshift help` works right away.
+- The app lives in the menu bar (moon icon) and has no Dock icon.
+- Builds are ad hoc signed but not notarized by Apple, so Gatekeeper may block
+  the first launch. Approve it once in System Settings > Privacy & Security >
+  Open Anyway, or run:
+
+  ```bash
+  xattr -dr com.apple.quarantine /Applications/NightShiftCtl.app
+  ```
+
+- If you installed NightShiftCtl from the `.pkg` before, reinstall over it with
+  `brew install --cask --force nightshiftctl`. The old `/usr/local/bin/nightshift`
+  from the package can be removed with `sudo rm /usr/local/bin/nightshift`.
+
+## Update and uninstall
+
+```bash
+brew upgrade --cask nightshiftctl
+brew uninstall --cask nightshiftctl
+brew uninstall --cask --zap nightshiftctl   # also removes preferences and caches
+```
+
+## License
+
+The casks in this tap are MIT licensed. Each app has its own license.
