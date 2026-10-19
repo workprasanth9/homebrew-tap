@@ -17,6 +17,17 @@ cask "nightshiftctl" do
   app "NightShiftCtl.app"
   binary "#{appdir}/NightShiftCtl.app/Contents/Resources/nightshift"
 
+  # Release builds are open source and ad hoc signed but not notarized, so
+  # Gatekeeper would block both the app and the bundled CLI. Installing from
+  # this tap is the trust decision, so clear the quarantine flag on this app only.
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{appdir}}/NightShiftCtl.app"],
+        must_succeed:   false,
+        writable_paths: ["NightShiftCtl.app"],
+        writable_base:  :appdir
+  end
+
   uninstall quit: "com.workprasanth9.NightShiftCtl"
 
   zap trash: [
@@ -29,11 +40,10 @@ cask "nightshiftctl" do
   caveats <<~EOS
     NightShiftCtl lives in the menu bar (look for the moon icon). It has no Dock icon.
 
-    The app is open source and ad hoc signed, but not notarized by Apple, so
-    Gatekeeper may block the first launch. Either approve it once in
-    System Settings > Privacy & Security > Open Anyway, or clear the
-    download quarantine flag yourself:
-      xattr -dr com.apple.quarantine /Applications/NightShiftCtl.app
+    The app is open source and ad hoc signed, but not notarized by Apple.
+    This cask clears the download quarantine flag on NightShiftCtl.app so the
+    app and the nightshift CLI open normally. If macOS still blocks it, approve
+    it once in System Settings > Privacy & Security > Open Anyway.
 
     The nightshift command line tool is linked into Homebrew's bin. Run:
       nightshift help
