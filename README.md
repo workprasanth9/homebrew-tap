@@ -26,13 +26,10 @@ brew install --cask workprasanth9/tap/nightshiftctl
 - The app goes to `/Applications/NightShiftCtl.app` and the `nightshift` CLI is
   linked into Homebrew's `bin`, so `nightshift help` works right away.
 - The app lives in the menu bar (moon icon) and has no Dock icon.
-- Builds are ad hoc signed but not notarized by Apple, so Gatekeeper may block
-  the first launch. Approve it once in System Settings > Privacy & Security >
-  Open Anyway, or run:
-
-  ```bash
-  xattr -dr com.apple.quarantine /Applications/NightShiftCtl.app
-  ```
+- Builds are open source and ad hoc signed but not notarized by Apple. The cask
+  clears the download quarantine flag on NightShiftCtl.app only, so the app and
+  the CLI open without a Gatekeeper block. If macOS still blocks it, approve it
+  once in System Settings > Privacy & Security > Open Anyway.
 
 - If you installed NightShiftCtl from the `.pkg` before, reinstall over it with
   `brew install --cask --force nightshiftctl`. The old `/usr/local/bin/nightshift`
