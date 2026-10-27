@@ -10,11 +10,14 @@ brew trust workprasanth9/tap
 brew install --cask nightshiftctl
 ```
 
-Recent Homebrew versions refuse to load casks and formulae from a third party
-tap until you trust it. `brew trust workprasanth9/tap` trusts this whole tap.
-To trust only one entry, use for example `brew trust --cask workprasanth9/tap/keepawake`.
+Homebrew 7 refuses to load casks and formulae from a third party tap until you
+trust it. `brew trust workprasanth9/tap` trusts this whole tap, so short names
+like `nightshiftctl`, `keepawake`, and `jamfea-kit` work. To trust only one
+entry, use for example `brew trust --cask workprasanth9/tap/keepawake`.
+Commands like `brew info` also need the tap trusted.
 
-Or in one line:
+Or in one line. Installing by the full name trusts that one entry, so no
+separate `brew trust` is needed:
 
 ```bash
 brew install --cask workprasanth9/tap/nightshiftctl
