@@ -21,6 +21,17 @@ brew install --cask workprasanth9/tap/nightshiftctl
 | --- | --- |
 | `nightshiftctl` | [NightShiftCtl](https://github.com/workprasanth9/NightShiftCtl): menu bar app for Night Shift, Keep Awake, Dark Mode and other everyday toggles, plus the `nightshift` command line tool |
 
+## Available formulae
+
+| Formula | What it installs |
+| --- | --- |
+| `jamfea-kit` | [JamfEA-Kit](https://github.com/workprasanth9/JamfEA-Kit): 19 tested Jamf Pro Extension Attribute scripts and the `jamfea` CLI to list, run, validate, and export them |
+
+```bash
+brew install workprasanth9/tap/jamfea-kit
+jamfea list
+```
+
 ## NightShiftCtl notes
 
 - The app goes to `/Applications/NightShiftCtl.app` and the `nightshift` CLI is
@@ -41,8 +52,10 @@ brew install --cask workprasanth9/tap/nightshiftctl
 brew upgrade --cask nightshiftctl
 brew uninstall --cask nightshiftctl
 brew uninstall --cask --zap nightshiftctl   # also removes preferences and caches
+brew upgrade jamfea-kit
+brew uninstall jamfea-kit
 ```
 
 ## License
 
-The casks in this tap are MIT licensed. Each app has its own license.
+The casks and formulae in this tap are MIT licensed. Each app has its own license.
