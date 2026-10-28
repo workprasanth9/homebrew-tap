@@ -1,8 +1,8 @@
 class Updatedoctor < Formula
   desc "Read only diagnosis of why a Mac did not install a macOS update"
   homepage "https://github.com/workprasanth9/UpdateDoctor"
-  url "https://github.com/workprasanth9/UpdateDoctor/releases/download/v1.1.1/updatedoctor-1.1.1-macos-universal.tar.gz"
-  sha256 "3ffe987d2a0d212c6a4cfc83793b26046f984fcfab8bdc36b5d3589ac04e4405"
+  url "https://github.com/workprasanth9/UpdateDoctor/releases/download/v1.1.2/updatedoctor-1.1.2-macos-universal.tar.gz"
+  sha256 "b94b3d9baa92e9f1d35b3305f6399321aebd87941225c8c63c40f93de50fcfa3"
   license "MIT"
 
   depends_on :macos
