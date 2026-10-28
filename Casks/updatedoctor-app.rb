@@ -1,6 +1,6 @@
 cask "updatedoctor-app" do
-  version "1.1.0"
-  sha256 "671bd0426abd292890caff5a1884af578afd0d2fd8438de808a5e517643df80e"
+  version "1.1.1"
+  sha256 "b87fdee28e37e623e5e49bbc301ad8cd732c67d87b9198ad231ccf7cdf2611fb"
 
   url "https://github.com/workprasanth9/UpdateDoctor/releases/download/v#{version}/UpdateDoctor-#{version}-app.zip"
   name "UpdateDoctor"
