@@ -12,7 +12,7 @@ brew install --cask nightshiftctl
 
 Homebrew 7 refuses to load casks and formulae from a third party tap until you
 trust it. `brew trust workprasanth9/tap` trusts this whole tap, so short names
-like `nightshiftctl`, `keepawake`, and `jamfea-kit` work. To trust only one
+like `nightshiftctl`, `keepawake`, `jamfea-kit`, and `updatedoctor` work. To trust only one
 entry, use for example `brew trust --cask workprasanth9/tap/keepawake`.
 Commands like `brew info` also need the tap trusted.
 
@@ -40,11 +40,19 @@ keepawake start --duration 2h
 | Formula | What it installs |
 | --- | --- |
 | `jamfea-kit` | [JamfEA-Kit](https://github.com/workprasanth9/JamfEA-Kit): 19 tested Jamf Pro Extension Attribute scripts and the `jamfea` CLI to list, run, validate, and export them |
+| `updatedoctor` | [UpdateDoctor](https://github.com/workprasanth9/UpdateDoctor): read only `updatedoctor` CLI that explains why a Mac did not install a macOS update, with JSON and Jamf EA output |
 
 ```bash
 brew install workprasanth9/tap/jamfea-kit
 jamfea list
 ```
+
+```bash
+brew install workprasanth9/tap/updatedoctor
+sudo updatedoctor doctor
+```
+
+The one line install by full name works without a separate `brew trust` step.
 
 ## NightShiftCtl notes
 
@@ -83,6 +91,8 @@ brew uninstall --cask keepawake
 brew uninstall --cask --zap keepawake       # also removes preferences and Application Support files
 brew upgrade jamfea-kit
 brew uninstall jamfea-kit
+brew upgrade updatedoctor
+brew uninstall updatedoctor
 ```
 
 ## License
