@@ -29,10 +29,12 @@ brew install --cask workprasanth9/tap/nightshiftctl
 | --- | --- |
 | `nightshiftctl` | [NightShiftCtl](https://github.com/workprasanth9/NightShiftCtl): menu bar app for Night Shift, Keep Awake, Dark Mode and other everyday toggles, plus the `nightshift` command line tool |
 | `keepawake` | [KeepAwake](https://github.com/workprasanth9/KeepAwake): menu bar app and `keepawake` command line tool that keep a Mac awake with IOKit power assertions, schedules, and LaunchAgent or LaunchDaemon installs |
+| `updatedoctor-app` | [UpdateDoctor](https://github.com/workprasanth9/UpdateDoctor): menu bar app (green, yellow or red dot) that explains why a Mac did not install a macOS update, with the `updatedoctor` command line tool inside. Install either this cask or the `updatedoctor` formula, not both |
 
 ```bash
 brew install --cask workprasanth9/tap/keepawake
 keepawake start --duration 2h
+brew install --cask workprasanth9/tap/updatedoctor-app
 ```
 
 ## Available formulae
@@ -89,6 +91,8 @@ brew uninstall --cask --zap nightshiftctl   # also removes preferences and cache
 brew upgrade --cask keepawake
 brew uninstall --cask keepawake
 brew uninstall --cask --zap keepawake       # also removes preferences and Application Support files
+brew upgrade --cask updatedoctor-app
+brew uninstall --cask --zap updatedoctor-app
 brew upgrade jamfea-kit
 brew uninstall jamfea-kit
 brew upgrade updatedoctor
